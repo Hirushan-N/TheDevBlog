@@ -107,7 +107,7 @@ namespace TheDevBlog.API.Controllers
         [Route("{id:guid}")]
         public async Task<IActionResult> DeletePost(Guid id)
         {
-            var existingPost = dbContext.Posts.FindAsync(id);
+            var existingPost = await dbContext.Posts.FindAsync(id);
 
             if (existingPost != null)
             {
